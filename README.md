@@ -27,6 +27,7 @@ Restart Home Assistant.
 Go to your Profile → Theme and select Nostromo CRT.
 
 <p align="center">
-  <img src="Weyland.png" alt="Weyland CRT Theme Preview" width="900"><br>
-  <em>USCSS Nostromo // MU/TH/UR 6000 Interface</em>
+  <img src="Weyland.png" alt="Weyland-Yutani CRT Theme Preview" width="900"><br>
+  <em>USCSS Nostromo // MU/TH/UR 6000 Interface Display</em>
 </p>
+
