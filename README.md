@@ -27,6 +27,38 @@ Restart Home Assistant.
 Go to your Profile → Theme and select Nostromo CRT.
 
 ---
+---
+
+## Weyland-Yutani Logo
+
+The *Weyland-Yutani Corp* logo used in the theme preview is included in this repository (`Weylandv2.png`).
+
+To use it in your own dashboard:
+
+1. Download [`Weylandv2.png`](Weylandv2.png).
+2. Copy it to your Home Assistant `/config/www/` folder.
+3. Reference it in your Lovelace dashboard as `/local/Weylandv2.png`.
+
+### Example usage:
+```yaml
+type: picture
+image: /local/Weylandv2.png
+tap_action:
+  action: none
+card_mod:
+  style: |
+    ha-card {
+      --g: var(--nostromo-green, #00ff7a);
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      filter: drop-shadow(0 0 10px rgba(0,255,122,0.35));
+    }
+
 
 ## Additional Resources
 
