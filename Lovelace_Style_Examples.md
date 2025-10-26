@@ -6,6 +6,7 @@ Optional `card-mod` and layout snippets for advanced users who want to fully mat
 
 ### Nostromo Console Card (Blinking Cursor)
 
+```yaml
 type: markdown
 entity_id: sensor.time
 content: |
@@ -33,9 +34,7 @@ card_mod:
       animation: nostromo-blink 1s steps(1,end) infinite;
     }
 
----
-
-### Transparent Cards with Scanline Effect
+### Transparent Cards for Scanline Effect
 
 card_mod:
   style: |
@@ -47,8 +46,6 @@ card_mod:
       font-size: 20px !important;
       font-family: var(--nostromo-font, ui-monospace, Menlo, Consolas, monospace);
     }
-
----
 
 ### Weyland Logo Integration
 
@@ -64,12 +61,10 @@ card_mod:
       color: var(--g);
     }
 
----
-
 ### Thermostat Display
 
-A stylized horizontal thermostat display using `button-card` and `mod-card`.  
-Adjust entity IDs and temperature sensors as needed.
+# A stylized horizontal thermostat display using button-card and mod-card.
+# Adjust entity IDs and temperature sensors as needed.
 
 type: custom:mod-card
 grid_options:
@@ -145,8 +140,6 @@ card:
             return `${t} · ${h}`;
           ]]]
 
----
-
 ### Toggle Button Example
 
 type: button
@@ -171,9 +164,8 @@ card_mod:
       font-size: 20px !important;
     }
 
----
-
 ### Notes
 
-All snippets are intended for use with the *Weyland CRT Theme for Home Assistant*.  
-They use the same color variables, typefaces, and spacing conventions for visual consistency.
+# All snippets are intended for use with the Weyland CRT Theme for Home Assistant.
+# They use the same color variables, typefaces, and spacing conventions for visual consistency.
+
