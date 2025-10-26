@@ -25,3 +25,8 @@ It’s ideal for dashboards on wall-mounted tablets or dark ambient setups.
 
 Restart Home Assistant.
 Go to your Profile → Theme and select Nostromo CRT.
+
+<p align="center">
+  <img src="Weyland.png" alt="Weyland CRT Theme Preview" width="900"><br>
+  <em>USCSS Nostromo // MU/TH/UR 6000 Interface</em>
+</p>
