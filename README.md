@@ -26,6 +26,17 @@ It’s ideal for dashboards on wall-mounted tablets or dark ambient setups.
 Restart Home Assistant.
 Go to your Profile → Theme and select Nostromo CRT.
 
+---
+
+## Additional Resources
+
+For advanced users looking to extend or modify the interface, additional `card-mod` and layout snippets are available.
+
+- [Lovelace Style Examples](Lovelace_Style_Examples.md)
+
+These examples demonstrate optional enhancements such as transparent cards, glowing borders, and custom text layouts that complement the *Weyland CRT* theme aesthetic.
+
+
 <p align="center">
   <img src="Weyland.png" alt="Weyland-Yutani CRT Theme Preview" width="900"><br>
   <em>USCSS Nostromo // MU/TH/UR 6000 Interface Display</em>
