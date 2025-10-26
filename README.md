@@ -1,4 +1,6 @@
 # Weyland-Yutani CRT Theme for Home Assistant
+A minimalist sci-fi CRT-inspired theme for Home Assistant, modeled after the MU/TH/UR terminal interface from *Alien*.
+
 
 ![Weyland-Yutani Logo](Weylandv2.png)
 
