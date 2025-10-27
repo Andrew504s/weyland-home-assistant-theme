@@ -1,0 +1,110 @@
+Nostromo CRT 2:
+  ### --- CORE PALETTE ---
+  primary-background-color: "#0a0a0a"         # near-black
+  secondary-background-color: "#0c0c0c"
+  primary-color: "#00ff7a"                    # phosphor green
+  accent-color: "#ffb000"                     # warning amber
+  divider-color: "rgba(0,255,122,0.18)"
+
+  ### --- TEXT ---
+  primary-text-color: "#00ff7a"
+  secondary-text-color: "#00ff7a"
+  text-primary-color: "#00ff7a"
+  disabled-text-color: "#3e6a57"
+
+  ### --- CARDS / SURFACE ---
+  card-background-color: "rgba(7,10,8,0.86)"
+  ha-card-background: "rgba(7,10,8,0.86)"
+  ha-card-border-color: "rgba(0,255,122,0.18)"
+  ha-card-border-width: "1px"
+  ha-card-border-radius: "8px"
+  ha-card-box-shadow: "0 0 0 0 rgba(0,0,0,0)"
+
+  ### --- HEADER / SIDEBAR ---
+  app-header-background-color: "#0d120f"
+  app-header-text-color: "#c6ffdf"
+  sidebar-background-color: "#0b0f0d"
+  sidebar-icon-color: "#00ff7a"
+  sidebar-text-color: "#a8f7cc"
+  sidebar-selected-icon-color: "#00ff7a"
+  sidebar-selected-text-color: "#00ff7a"
+
+  ### --- STATES / ICONS ---
+  state-icon-color: "#00ff7a"
+  state-icon-active-color: "#00ff7a"
+  state-unavailable-color: "#335e4c"
+
+  ### --- CONTROLS (MWC/Sliders) ---
+  mdc-theme-primary: "#00ff7a"
+  mdc-theme-on-primary: "#00ff7a"
+  slider-color: "#00ff7a"
+  slider-secondary-color: "rgba(0,255,122,0.25)"
+
+  ### --- CUSTOM VARS (used by our cards) ---
+  --nostromo-green: "#00ff7a"
+  --nostromo-amber: "#ffb000"
+  --nostromo-dim:   "#6ad89f"
+  --nostromo-font: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace
+
+  ### --- BACKGROUND (includes CRT scanlines + vignette) ---
+  lovelace-background: >
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,255,122,0.045) 0px,
+      rgba(0,255,122,0.045) 1px,
+      rgba(0,0,0,0) 2px,
+      rgba(0,0,0,0) 4px
+    ) fixed,
+    radial-gradient(120% 85% at 50% 0%, rgba(0,255,122,0.08), transparent 65%) fixed,
+    radial-gradient(120% 110% at 50% 100%, rgba(0,0,0,0.55), transparent 60%) fixed,
+    linear-gradient(#070707, #0a0a0a) fixed
+
+  ### --- CARD-MOD GLOBALS (hover glow, subtle “glass” streaks) ---
+  card-mod-theme: Nostromo CRT
+  card-mod-root: |
+    :host, * {
+      font-family: var(--nostromo-font);
+      letter-spacing: 0.2px;
+    }
+
+    ha-card {
+      border: 1px solid var(--ha-card-border-color, rgba(0,255,122,0.18));
+      backdrop-filter: saturate(110%) blur(0.5px);
+      transition: box-shadow .2s ease, border-color .2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    ha-card:hover {
+      box-shadow: 0 0 14px rgba(0,255,122,0.08);
+      border-color: rgba(0,255,122,0.28) !important;
+    }
+    ha-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient( to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0) 18% ),
+        linear-gradient( to top,    rgba(255,255,255,0.015), rgba(255,255,255,0) 22% );
+      border-radius: inherit;
+    }
+
+  ### --- GLOBAL FONT + COLOR OVERRIDES ---
+  ha-card-background: "rgba(7,10,8,0.08)"
+  ha-card-border-width: "0"
+  ha-card-border-radius: "8px"
+  ha-card-box-shadow: "none"
+  card-background-color: "rgba(7,10,8,0.08)"
+
+  primary-font-family: "ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace"
+  paper-font-common-base_-_font-family: "var(--primary-font-family)"
+  paper-font-common-code_-_font-family: "var(--primary-font-family)"
+  paper-font-body1_-_font-family: "var(--primary-font-family)"
+  paper-font-body1_-_font-size: "15px"
+  paper-font-body1_-_font-weight: "400"
+
+  text-primary-color: "#00ff7a"
+  state-icon-color: "#00ff7a"
+  state-icon-active-color: "#00ff7a"
+  state-icon-unavailable-color: "#334c3c"
+
