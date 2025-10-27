@@ -4,19 +4,23 @@ Optional `card-mod` and layout snippets for advanced users who want to fully mat
 
 ---
 
-### Nostromo Console Card (Blinking Cursor)
+### Nostromo Console Cards
 
 ```yaml
+# Crew message
+
 type: markdown
 entity_id: sensor.time
-content: |
-  USCSS NOSTROMO  |  MISSION: 180924  |  CREW: 2  |  STATUS: NORMAL
+content: >
+  USCSS NOSTROMO  |  MISSION: 180924  | CREW: 2  |  STATUS: NORMAL <span
+  class="nostromo-cursor"></span>
 card_mod:
   style: |
     ha-card {
       --g: var(--nostromo-green, #00ff7a);
+      --a: var(--nostromo-amber, #ffb000);
       background: transparent;
-      border: none;
+      border: transparent;
       padding: 8px 12px;
       font-family: var(--nostromo-font, ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace);
       color: var(--g);
@@ -24,42 +28,47 @@ card_mod:
       font-size: 23px !important;
     }
 
+    /* define keyframes first */
     @keyframes nostromo-blink { 0%,49% { opacity: 1 } 50%,100% { opacity: 0 } }
 
+    /* current HA uses ha-markdown / .markdown-content */
+    ha-card ha-markdown,
+    ha-card .markdown,
+    ha-card .markdown-content {
+      position: relative;
+    }
+    ha-card ha-markdown::after,
+    ha-card .markdown::after,
     ha-card .markdown-content::after {
       content: "▌";
       display: inline-block;
-      margin-left: 4px;
+      margin-left: 7.4ch;
+      transform: translateY(-39px);
       color: var(--g);
       animation: nostromo-blink 1s steps(1,end) infinite;
     }
 
-### Transparent Cards for Scanline Effect
-
-card_mod:
-  style: |
-    ha-card {
-      --g: var(--nostromo-green, #00ff7a);
-      background: transparent;
-      border: none;
-      padding: 8px 12px;
-      font-size: 20px !important;
-      font-family: var(--nostromo-font, ui-monospace, Menlo, Consolas, monospace);
-    }
 
 ### Weyland Logo Integration
 
+type: picture
+image: /local/images/Weylandv2.png #example
 card_mod:
   style: |
     ha-card {
       --g: var(--nostromo-green, #00ff7a);
       --a: var(--nostromo-amber, #ffb000);
       background: transparent;
-      border: none;
-      padding: 0;
+      border: transparent;
+      padding: 0px 0px;
       font-family: var(--nostromo-font, ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace);
       color: var(--g);
+
     }
+grid_options:
+  columns: 6
+  rows: auto
+
 
 ### Thermostat Display
 
@@ -109,7 +118,7 @@ card:
   type: horizontal-stack
   cards:
     - type: custom:button-card
-      entity: climate.hallway
+      entity: # REPLACE WITH YOUR OWN
       show_icon: false
       show_name: false
       show_state: false
@@ -142,14 +151,16 @@ card:
 
 ### Toggle Button Example
 
-type: button
-entity: switch.aerotower_power
-name: AEROTOWER FAN
 show_name: true
 show_icon: false
+type: button
+grid_options:
+  columns: 6
+  rows: 1
 show_state: false
 tap_action:
   action: toggle
+entity: # REPLACE WITH YOUR OWN
 card_mod:
   style: |
     ha-card {
@@ -163,6 +174,34 @@ card_mod:
       letter-spacing: 1.5px;
       font-size: 20px !important;
     }
+
+### Docking bay / access control
+
+type: vertical-stack
+cards:
+  - type: markdown
+    content: |
+      DOCKING BAY // ACCESS CONTROL
+    card_mod:
+      style: |
+        ha-card {
+          --g: var(--nostromo-green, #00ff7a);
+
+          background: transparent;
+          border: none;
+          padding: 8px 12px;
+          font-size: 20px !important;
+          font-family: var(--nostromo-font, ui-monospace, Menlo, Consolas, monospace);
+        }
+
+        ha-markdown {
+          display: inline-block;          /* shrink to fit text */
+          border-bottom: 2px solid var(--g); /* adjustable line */
+          padding-bottom: 4px;            /* spacing between text and line */
+          letter-spacing: 2px;
+          color: var(--g);
+        }
+
 
 ### Notes
 
